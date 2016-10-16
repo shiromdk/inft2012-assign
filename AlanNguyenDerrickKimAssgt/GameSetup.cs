@@ -13,7 +13,7 @@ namespace AlanNguyenDerrickKimAssgt
 {
     public partial class GameSetup : Form
     {
-        private bool modeSelect;                //When true player must select a game mode
+
         List<string> difficultyString = new List<string>();
         Groan menuRef;                       //References the main menu
         public GameSetup(Groan menuForm)
@@ -26,7 +26,7 @@ namespace AlanNguyenDerrickKimAssgt
 
         private void GameSetup_Load(object sender, EventArgs e)
         {
-            modeSelect = true;
+            
         }
 
         private void vsPlayerbutton_Click(object sender, EventArgs e)
@@ -43,10 +43,7 @@ namespace AlanNguyenDerrickKimAssgt
             gameSetupPanel.Visible = false;
         }
 
-        private void toggleMode() {
-            modeSelect = !modeSelect;
-
-        }
+       
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -58,7 +55,7 @@ namespace AlanNguyenDerrickKimAssgt
             gameSetupPanel.Visible = true;
             vsCpuPanel.Visible = false;
             playerNameTextBox.Text = "";
-            cpuGameScore.Value = 1;
+            cpuGameScore.Value = 0;
 
         }
 
@@ -82,9 +79,12 @@ namespace AlanNguyenDerrickKimAssgt
                 string playerName = playerNameTextBox.Text;
                 int totalScore = (int)cpuGameScore.Value;
                 Game newGame = new Game(playerName,totalScore,difficulty);
-                GameScreen newGameScreen = new GameScreen(newGame);
+                GameScreen newGameScreen = new GameScreen(newGame, menuRef);
+                newGameScreen.Show();
+                this.Hide();
                 
             }
+
         }
 
         private void backButton2p_Click(object sender, EventArgs e)
@@ -106,6 +106,22 @@ namespace AlanNguyenDerrickKimAssgt
         private void twoPlayerPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void start2p_Click(object sender, EventArgs e)
+        {
+            if (totalValue2p.Value == 0 || p1Name.Text.Equals("") || p2Name.Text.Equals("")){
+                MessageBox.Show("Please enter the player names and total game score");
+            }
+            else {
+                string player1Name = p1Name.Text;
+                string player2Name = p2Name.Text; 
+                int totalScore = (int)totalValue2p.Value;
+                Game newGame = new Game(player1Name,player2Name, totalScore);
+                GameScreen newGameScreen = new GameScreen(newGame,menuRef);
+                newGameScreen.Show();
+                this.Hide();
+            }
         }
     }
 }

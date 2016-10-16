@@ -44,6 +44,7 @@
             this.playerNameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.twoPlayerPanel = new System.Windows.Forms.Panel();
+            this.totalValue2p = new System.Windows.Forms.NumericUpDown();
             this.backButton2p = new System.Windows.Forms.Button();
             this.start2p = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -53,15 +54,14 @@
             this.p1Name = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.gameSetupPanel = new System.Windows.Forms.Panel();
-            this.totalValue2p = new System.Windows.Forms.NumericUpDown();
-            this.backToMainMenu = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.backToMainMenu = new System.Windows.Forms.Button();
             this.vsCpuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cpuGameScore)).BeginInit();
             this.DifficultyGroup.SuspendLayout();
             this.twoPlayerPanel.SuspendLayout();
-            this.gameSetupPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.totalValue2p)).BeginInit();
+            this.gameSetupPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // vsPlayerbutton
@@ -257,6 +257,18 @@
             this.twoPlayerPanel.Visible = false;
             this.twoPlayerPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.twoPlayerPanel_Paint);
             // 
+            // totalValue2p
+            // 
+            this.totalValue2p.Location = new System.Drawing.Point(332, 319);
+            this.totalValue2p.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.totalValue2p.Name = "totalValue2p";
+            this.totalValue2p.Size = new System.Drawing.Size(120, 20);
+            this.totalValue2p.TabIndex = 9;
+            // 
             // backButton2p
             // 
             this.backButton2p.Location = new System.Drawing.Point(396, 388);
@@ -275,6 +287,7 @@
             this.start2p.TabIndex = 7;
             this.start2p.Text = "Start Game";
             this.start2p.UseVisualStyleBackColor = true;
+            this.start2p.Click += new System.EventHandler(this.start2p_Click);
             // 
             // label7
             // 
@@ -342,17 +355,15 @@
             this.gameSetupPanel.Size = new System.Drawing.Size(784, 561);
             this.gameSetupPanel.TabIndex = 9;
             // 
-            // totalValue2p
+            // label8
             // 
-            this.totalValue2p.Location = new System.Drawing.Point(332, 319);
-            this.totalValue2p.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.totalValue2p.Name = "totalValue2p";
-            this.totalValue2p.Size = new System.Drawing.Size(120, 20);
-            this.totalValue2p.TabIndex = 9;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(161, 58);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(463, 55);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Select Game Mode";
             // 
             // backToMainMenu
             // 
@@ -364,16 +375,6 @@
             this.backToMainMenu.Text = "Back";
             this.backToMainMenu.UseVisualStyleBackColor = true;
             this.backToMainMenu.Click += new System.EventHandler(this.backToMainMenu_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(161, 58);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(463, 55);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Select Game Mode";
             // 
             // GameSetup
             // 
@@ -394,9 +395,9 @@
             this.DifficultyGroup.PerformLayout();
             this.twoPlayerPanel.ResumeLayout(false);
             this.twoPlayerPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.totalValue2p)).EndInit();
             this.gameSetupPanel.ResumeLayout(false);
             this.gameSetupPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.totalValue2p)).EndInit();
             this.ResumeLayout(false);
 
         }
