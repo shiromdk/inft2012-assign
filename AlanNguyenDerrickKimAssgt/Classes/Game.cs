@@ -10,7 +10,7 @@ namespace AlanNguyenDerrickKimAssgt.Classes
     //This class will represent the a single game. Each game will be associated with a gamescreen form
     public class Game
     {
-        private bool cpuGame;                                       // True if cpu game
+        public bool cpuGame;                                       // True if cpu game
         private int totalScore;                                     // The total score the game will run two  
         private int difficulty;                                     // CPU Difficulty - 0 = easy 1 = normal 2 = hard
         private List<Turn> turns;                                   // contains a history of all the turns played in current game
@@ -108,6 +108,9 @@ namespace AlanNguyenDerrickKimAssgt.Classes
                 }
             }
         }
+        /*
+        Starts a new turn
+            */
        
         public void newTurn(int rollOne,int rollTwo, System.Windows.Forms.Label turnLabel) {
             if (!gameEnd) {
@@ -120,6 +123,9 @@ namespace AlanNguyenDerrickKimAssgt.Classes
             }
             
         }
+        /*
+        This function will check if the game should be over and who the winner should be
+            */
 
         private void checkWin(System.Windows.Forms.Label turnLabel) {
             if (leftTurn)
@@ -146,6 +152,9 @@ namespace AlanNguyenDerrickKimAssgt.Classes
             
         }
 
+        /*
+            Toggles player and updates scores
+            */
         public void passTurn() {
             if (leftTurn)
             {
@@ -194,6 +203,10 @@ namespace AlanNguyenDerrickKimAssgt.Classes
         }
         public int getPlayerTwoCumulativeScore() {
             return cumulativeScoreTwo;
+        }
+
+        public int getDifficulty() {
+            return difficulty;
         }
 
         public Die getDie() {

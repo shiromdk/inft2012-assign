@@ -26,6 +26,9 @@ namespace AlanNguyenDerrickKimAssgt.Classes
             // second dice x must be 180 y must be 30.                       
         
         }
+        /*
+        This function will draw a die on screen based on the dice num given
+            */
         public void drawDie(int iLeft, int iTop, int iSize, int iDiceNum)
         {
             graPaper.FillRectangle(brshBlack, iLeft, iTop, iSize, iSize);

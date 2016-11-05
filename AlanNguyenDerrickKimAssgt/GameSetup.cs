@@ -67,11 +67,11 @@ namespace AlanNguyenDerrickKimAssgt
             }
             if (normal.Checked)
             {
-                difficulty = 0;
+                difficulty = 1;
             }
             if (hard.Checked)
             {
-                difficulty = 0;
+                difficulty = 2;
             }
             if (playerNameTextBox.Text.Equals("") || cpuGameScore.Value==0){
                 MessageBox.Show("Please enter the player name and total game score");

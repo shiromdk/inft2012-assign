@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace AlanNguyenDerrickKimAssgt.Classes
 {
+    /*
+    This class represents a turn
+        */
     public class Turn
     {
         string playerName;
